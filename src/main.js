@@ -81,10 +81,7 @@ function createLand () {
 // listen for app to be ready
 app.on('ready', function() {
     createSplash();
-    splash.on('ready-to-show', () => {
-        autoUpdater.checkForUpdatesAndNotify();
-    });
-    
+    autoUpdater.checkForUpdatesAndNotify();
 });
 
 app.on('window-all-closed', () => {
