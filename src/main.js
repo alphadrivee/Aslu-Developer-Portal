@@ -117,11 +117,16 @@ ipcMain.on('message-reload', function(){
     home.reload();
 });
 
+autoUpdater.on('checking-for-update', () => {
+    ipcMain.send('checking');
+    console.log("checking...")
+  })
+
 autoUpdater.on('update-available', () => {
-    splash.webContents.send('update_available');
+    ipcMain.send('update_available');
   });
   autoUpdater.on('update-downloaded', () => {
-    splash.webContents.send('update_downloaded');
+    ipcMain.send('update_downloaded');
   });
 
   ipcMain.on('restart_app', () => {
@@ -131,3 +136,7 @@ autoUpdater.on('update-available', () => {
   autoUpdater.on('update-not-available', () => {
     createLand();
   });
+
+  autoUpdater.on('error', (err) => {
+    console.log('Error in auto-updater. ' + err);
+  })
