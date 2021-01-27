@@ -84,6 +84,11 @@ app.on('ready', function() {
     autoUpdater.checkForUpdatesAndNotify();
 });
 
+function sendStatusToWindow(text) {
+    log.info(text);
+    win.webContents.send('message', text);
+  }
+
 app.on('window-all-closed', () => {
     if(process.platform !== 'darwin'){
         app.quit();
@@ -113,27 +118,25 @@ ipcMain.on('open-home', function() {
 ipcMain.on('message-reload', function(){
     home.reload();
 });
-
 autoUpdater.on('checking-for-update', () => {
-    ipcMain.send('checking');
-    console.log("checking...")
-  })
+    sendStatusToWindow('Checking for update...');
+});
+autoUpdater.on('update-available', (info) => {
+    sendStatusToWindow('Update available.');
+});
+autoUpdater.on('update-not-available', (info) => {
+    sendStatusToWindow('Update not available.');
+});
+autoUpdater.on('error', (err) => {
+    sendStatusToWindow('Error in auto-updater. ' + err);
+});
 
-autoUpdater.on('update-available', () => {
-    ipcMain.send('update_available');
-  });
-  autoUpdater.on('update-downloaded', () => {
-    ipcMain.send('update_downloaded');
-  });
-
-  ipcMain.on('restart_app', () => {
-    autoUpdater.quitAndInstall();
-  });
-
-  autoUpdater.on('update-not-available', () => {
-    createLand();
-  });
-
-  autoUpdater.on('error', (err) => {
-    console.log('Error in auto-updater. ' + err);
-  })
+autoUpdater.on('download-progress', (progressObj) => {
+    let log_message = "Download speed: " + progressObj.bytesPerSecond;
+    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+    sendStatusToWindow(log_message);
+})
+autoUpdater.on('update-downloaded', (info) => {
+    sendStatusToWindow('Update downloaded');
+});
