@@ -1,6 +1,6 @@
 {
   "name": "aslu-portal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Developer Portal For Aslu News Website",
   "main": "src/main.js",
   "scripts": {
