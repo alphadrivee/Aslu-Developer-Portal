@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face{
+  font-family: Faseyha;
+  src: url("https://cdn.glitch.com/03551394-c957-471e-8c56-1c2f621fda33%2FMVFaseyha.otf?v=1608443876416");
+  src: url("https://cdn.glitch.com/03551394-c957-471e-8c56-1c2f621fda33%2FMVFaseyha.otf?v=1608443876416") format("woff"),
+  url("https://cdn.glitch.com/03551394-c957-471e-8c56-1c2f621fda33%2FMVFaseyha.otf?v=1608443876416") format("opentype"),
+  url("https://cdn.glitch.com/03551394-c957-471e-8c56-1c2f621fda33%2FMVFaseyha.otf?v=1608443876416") format("svg");
+}
+
+
+*:focus {
+  outline: 0;
+}
+
+body {
+    background: #23272A;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.nav {
+  background-color: #23272A;
+  width: 100px;
+  height: 600px;
+  float: left;
+  color: #fff;
+}
+
+.home-page {
+  background-color:#2f3135;
+  width: 93.5%;
+  height: auto;
+  border-radius: 25px;
+  float: left;
+}
+
+.information{
+  background-color:#242427;
+  width: 77%;
+  height: 100rem;
+  border-radius: 25px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.nav-btns.home{
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-btns {
+  background-color: #221e1e;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  border-radius: 30px;
+  margin-left: 20px;
+  margin-top: 13px;
+}
+
+.nav-btns.animated.contribute{
+  background-color: #de4342;
+}
+
+.nav-btns.animated.control{
+  background-color: #e0dd57;
+}
+
+.nav-btns.animated.profile{
+  background-color: #4f92ff;
+}
+.nav-btns.animated.settings{
+  background-color: #6a6280;
+}
+
+.nav-btns.animated.add-news{
+  background-color: #32bea6;
+}
+
+.nav hr {
+  width: 50px;
+  background-color: #323436;
+  float: 10px;
+}
+
+.side-bar-g{
+    background-image: linear-gradient(to top,rgb(255, 81, 0),red, darkred);
+    width: 300px;
+    height: 109em;
+}
+
+#left {
+    float:left;
+}
+#right{
+    float:right;
+} 
+
+
+
+.clock-day:before {
+    content: var(--timer-day);
+  }
+  .clock-hours:before {
+    content: var(--timer-hours);
+  }
+  .clock-minutes:before {
+    content: var(--timer-minutes);
+  }
+  .clock-seconds:before {
+    content: var(--timer-seconds);
+  }
+  
+  
+  .clock-container {
+    background-color: #080808;
+    display: flex;
+    height: 108px;
+  }
+  .clock-col {
+    text-align: center;
+    margin-right: 12px;
+    margin-left: 12px;
+    min-width: 50px;
+    position: relative;
+  }
+ 
+  .clock-col:not(:last-child):before {
+    top: 35%;
+  }
+  .clock-col:not(:last-child):after {
+    top: 50%;
+  }
+  .clock-timer:before {
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .clock-label {
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 200px) {
+    .clock-container {
+      flex-direction: column;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  
+    .clock-col + .clock-col {
+      margin-top: 20px;
+    }
+    .clock-col:before, .clock-col:after {
+      display: none !important;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0, 25);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(71, 71, 71);
+  }
+
+  .information input {
+    font-family: "Faseyha", sans-serif;
+    color: white;
+    background-color: rgb(58, 58, 58);
+    border: none;
+    padding: 12px 15px;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    width: 50%;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 15px;
+    float: right;
+  }
+
+  .information #long-title, #short-title, #latin-title{
+    width: 70%;
+  }
+
+  .information h1{
+    text-align: right;
+    font-family: 'Faseyha', sans-serif;
+    margin-right: 50px;
+    margin-top: 50px;
+    text-decoration: underline;
+  }
+  
+
+
+  main {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  main h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #bbb;
+  }
+  main h1 span {
+    border: 2px solid #dfdfdf;
+    padding: 3px 2px 3px 7px;
+    border-radius: 6px;
+    font-weight: 400;
+  }
+  
+  main p {
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #d57171;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  main .tags-input {
+    border: 2px solid #dfdfdf;
+    border-radius: 40px;
+    height: 40px;
+    padding: 0 11px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+  }
+  main .tags-input span {
+    background: #bbb;
+    margin-right: 7px;
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: 20px;
+  }
+  main .tags-input span[data-selected] {
+    background: #d57171;
+  }
+  main .tags-input::after {
+    content: "";
+    background: #888;
+    width: 1px;
+    height: 19px;
+    margin: -1px 0 0 -1px;
+    display: none;
+    -webkit-animation: blink 0.5s infinite alternate;
+            animation: blink 0.5s infinite alternate;
+  }
+  main .tags-input:focus {
+    border-color: #d57171;
+    outline: none;
+  }
+  main .tags-input:focus[data-cursor]::after {
+    display: block;
+  }
+  @media screen and (max-width: 736px) {
+    main .tags-input:focus[data-cursor]::after {
+      display: none;
+    }
+  }
+  main .tags-input:focus + h1 {
+    color: #d57171;
+  }
+  main .tags-input:focus + h1 span {
+    border-color: #d57171;
+  }
+  
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    49% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    49% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

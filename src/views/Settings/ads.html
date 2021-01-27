@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../stylesheets/configuration-panel.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Aslu Developer Portal</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="../../views/main.html" title="Home">
+            <img src="../../../imgs/Home.png" class="nav-btns home">
+        </a>
+        <hr>
+        <a href="../../views/contribute-room.html" title="Contribute Room">
+            <img src="../../../imgs/Contribute.png" class="nav-btns animated contribute">
+        </a>
+        <a href="../../views/profile.html" title="Profile">
+            <img src="../../../imgs/user.png" class="nav-btns animated profile">
+        </a>
+        <a href="../../views/Settings/ads.html">
+            <img src="../../../imgs/Settings.png" class="nav-btns animated settings">
+        </a>
+
+        <a href="../../views/add-news.html">
+            <img src="../../../imgs/addnews.png" class="nav-btns animated add-news">
+        </a>
+
+    </div>
+
+    <div class="home-page">
+        <div class="page-header">
+            <p class="page-header-title">Settings</p>
+            <a class="tabs" href="../Settings/mod.html">Moderation</a>
+            <a class="tabs" href="../Settings/ads.html">Advertisement</a>
+            <a class="tabs" href="#">Audio</a>
+            <a class="tabs" href="#">Headline</a>
+        </div>
+        
+        <div onclick="openAdPanel()" class="ad-top">
+            
+        </div>
+
+        <div  onclick="openAdPanel()" class="ad-left">
+            
+        </div>
+
+        <div  onclick="openAdPanel()" class="ad-middle">
+            
+        </div>
+       
+        <div  onclick="openAdPanel()" class="ad-right">
+            
+        </div>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script> 
+
+    <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPLjhytfwwz42-hzeYy_i7qX14jPq71bo",
+            authDomain: "aslu-portal.firebaseapp.com",
+            databaseURL: "https://aslu-portal-default-rtdb.firebaseio.com",
+            projectId: "aslu-portal",
+            storageBucket: "aslu-portal.appspot.com",
+            messagingSenderId: "248162905823",
+            appId: "1:248162905823:web:e2e4e75205203cfd79836a",
+            measurementId: "G-H823DR3CD2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+    <script src="../../script/configuration-panel.js"></script>
+</body>
+</html>

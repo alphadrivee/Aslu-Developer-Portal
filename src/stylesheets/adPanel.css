@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body{
+    background: rgb(44, 45, 49);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.adIMG {
+    background-color: rgb(10, 255, 141);
+    width: 760px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.apply-cancel-btns p {
+    float: left;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 120px;
+    margin-left: 20px;
+}
+
+#cancel-btn {
+    background: rgb(250, 86, 86);
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 113px;
+    border: none;
+    width: 100px;
+    float: right;
+    margin-right: 10px;
+    
+}
+
+#apply-btn {
+    display: block;
+    background: rgb(56, 174, 253);
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    width: 100px;
+    float: right;
+    margin-top: 113px;
+    margin-right: 10px;
+}
+#cancel-btn:hover{
+    background: rgb(255, 66, 66);
+}
+
+#apply-btn:hover{
+    background: rgb(30, 165, 255);
+}
+
+
+.field{
+    background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+    width: 600px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 25px;
+}
+
+.nav-btns {
+    float: left;
+    margin-top: 10px;
+    margin-right: 200px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+}
+
+#world, #sports, #health, #business, #religion{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+#entertainment, #education{
+    margin-top: 20px;
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../stylesheets/adPanel.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Panel</title>
+</head>
+<body>
+    <div class="adIMG">
+
+    </div>
+
+    <input class="field" id="name" type="text" placeholder="Sponsored By" />
+    <input class="field" id="duration" type="text" placeholder="Duration" />
+
+    <div class="nav-btns">
+        <p>Select the pages where you would like to show the ad:</p>
+        <form>
+            <label>
+                <input type="radio" id="home" name="home" value="home">Home
+            </label>
+            
+            <label>
+                <input type="radio" id="world" name="world" value="world">World
+            </label>
+            
+            <label>
+                <input type="radio" id="sports" name="sports" value="sports">Sports
+            </label>
+
+            <label>
+                <input type="radio" id="health" name="health" value="health">Health
+            </label>
+
+            <label>
+                <input type="radio" id="business" name="business" value="business">Business
+            </label>
+
+            <label>
+                <input type="radio" id="religion" name="religion" value="religion">Religion
+            </label>
+
+            <label>
+                <input type="radio" id="politics" name="politics" value="politics">Politics
+            </label>
+
+            <label>
+                <input type="radio" id="entertainment" name="entertainment" value="entertainment">Entertainment
+            </label>
+
+            <label>
+                <input type="radio" id="education" name="education" value="education">Education
+            </label>
+
+        </form>
+    </div>
+    
+
+    <div class="apply-cancel-btns">
+        <button id="cancel-btn">Cancel</button>
+        <button id="apply-btn">Apply</button>
+        <p>Required 800 x 500 Image Size.</p>
+
+    </div>
+    <script>
+        const remote = require('electron').remote;
+       
+         document.getElementById("cancel-btn").addEventListener("click", function (e) {
+              var window = remote.getCurrentWindow();
+              window.close();
+         });   
+       
+       </script>   
+</body>
+</html>

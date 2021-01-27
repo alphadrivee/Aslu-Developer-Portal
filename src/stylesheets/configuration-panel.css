@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    background: #23272A;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav {
+  background-color: #23272A;
+  width: 100px;
+  height: 100%;
+  float: left;
+  color: #fff;
+}
+
+.nav hr {
+  width: 50px;
+  background-color: #323436;
+  float: 10px;
+}
+
+
+.nav-btns.home{
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.nav-btns {
+  background-color: #221e1e;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  border-radius: 30px;
+  margin-left: 20px;
+  margin-top: 13px;
+}
+
+.nav-btns.animated.contribute{
+  background-color: #de4342;
+}
+
+.nav-btns.animated.control{
+  background-color: #e0dd57;
+}
+
+.nav-btns.animated.profile{
+  background-color: #4f92ff;
+}
+.nav-btns.animated.settings{
+  background-color: #6a6280;
+}
+
+.nav-btns.animated.add-news{
+  background-color: #32bea6;
+}
+
+
+.page-header {
+  background-color: #23272A;
+  width: 1500px;
+  height: 50px;
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  margin-left: 0;
+}
+
+
+.page-header-title {
+  margin: 0;
+  font-size: 20px;
+  float: left; 
+  margin-left: 50px;
+}
+
+.nav-btns.animated:hover {
+  border-radius: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+
+.home-page {
+  background-color:#2f3135;
+  width: 1500px;
+  height: 100%;
+  float: left;
+  border-radius: 25px;
+}
+
+.ad-top{
+    background-color: rgb(37, 207, 165);
+    width: 1300px;
+    height: 150px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.ad-middle{
+    background-color: rgb(15, 190, 182);
+    width: 860px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 10px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.ad-left{
+    background-color: rgb(140, 232, 255);
+    width: 170px;
+    height: 530px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.ad-right{
+    background-color: rgb(140, 232, 255);
+    width: 170px;
+    height: 530px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+
+.tabs {
+    background-color: rgb(145, 235, 238);
+    border-radius: 8px;
+    color: black;
+    margin-left: 15px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    margin-top: 3px;
+}

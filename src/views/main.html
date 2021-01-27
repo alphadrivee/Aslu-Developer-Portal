@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/clock.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Aslu Developer Portal</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="../views/main.html">
+            <img src="../../imgs/Home.png" class="nav-btns home">
+        </a>
+        <hr>
+        <a href="../views/contribute-room.html">
+            <img src="../../imgs/Contribute.png" class="nav-btns animated contribute">
+        </a>
+        <a href="../views/profile.html">
+            <img src="../../imgs/user.png" class="nav-btns animated profile">
+        </a>
+        <a href="../views/Settings/mod.html">
+            <img src="../../imgs/Settings.png" class="nav-btns animated settings">
+        </a>
+
+        <a href="../views/add-news.html">
+            <img src="../../imgs/addnews.png" class="nav-btns animated add-news">
+        </a>
+    </div>
+
+    <div class="page-header">
+        <p class="page-header-title">Home</p>
+    </div>
+
+    <div class="home-page">
+        
+        <div class="status-bar">
+
+            <div class="clock-container">
+                <div class="clock-col">
+                  <p class="clock-day clock-timer"></p>
+                  <p class="clock-label">Day</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-hours clock-timer"></p>
+                  <p class="clock-label">Hours</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-minutes clock-timer"></p>
+                  <p class="clock-label">Minutes</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-seconds clock-timer"></p>
+                  <p class="clock-label">Seconds</p>
+                </div>
+              </div>
+
+                <div id="users" class="users-list">
+                   
+                    
+                </div>
+              
+            </div>
+
+            <ul id="messages"></ul>
+
+            <div class="write">
+                <a href="javascript:;" class="write-link attach"></a>
+                <input id="message" type="text" placeholder="Write A Message..."/>
+                <a href="javascript:;" class="write-link smiley"></a>
+                <a href="javascript:;" onclick="sendMessage()" class="write-link send"></a>
+            </div>
+        </div>
+
+
+    <!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script> 
+
+<script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDPLjhytfwwz42-hzeYy_i7qX14jPq71bo",
+        authDomain: "aslu-portal.firebaseapp.com",
+        databaseURL: "https://aslu-portal-default-rtdb.firebaseio.com",
+        projectId: "aslu-portal",
+        storageBucket: "aslu-portal.appspot.com",
+        messagingSenderId: "248162905823",
+        appId: "1:248162905823:web:e2e4e75205203cfd79836a",
+        measurementId: "G-H823DR3CD2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+</script>
+
+    <script src="../script/clock.js"></script>
+    <script src="../script/loadUsers.js"></script>
+    <script src="../script/loadMsgs.js"></script>
+    <script src="../script/functions.js"></script>
+    <script>
+
+   var d = moment().format("dd");
+   var h = moment().format("k");
+   var m = moment().format("mm")
+   var s = moment().format("ss")
+
+    var timestamp = `${d} ${h}-${m}-${s}`
+
+    function sendMessage(){
+        var editJsonFile = require("edit-json-file");
+        var settings = editJsonFile(`${__dirname}/../script/settings.json`);
+
+        var message = document.getElementById('message').value;
+        var uname;
+        firebase.database().ref('users/' + settings.get("Fullname")).on('value', function(snapshot) {
+            if(snapshot.exists()){
+                uname = snapshot.val().Username;
+            }else{
+                uname =  settings.get("Fullname");
+            }
+        })
+
+        if(!message.length) return;
+        var fname = settings.get("Fullname");
+        firebase.database().ref('messages').push().set({
+            Username: uname,
+            Fullname: fname,
+            Message: message,
+            Timestamp: timestamp,
+            isHighlighted: false
+        }).then(document.getElementById('message').value = "");
+        }
+
+        document.onkeypress = keyPress;
+
+        function keyPress(e){
+            var x = e || window.event;
+            var key = (x.keyCode || x.which);
+            if(key == 13 || key == 3){
+                sendMessage();
+            }
+        }
+
+    var div = document.getElementById("myDropdown");
+    function showDropdown() {
+        if(document.getElementById("myDropdown").className === "dropdown-content show"){
+            document.getElementById("myDropdown").className = "dropdown-content";
+        }else{
+            document.getElementById("myDropdown").className = "dropdown-content show";
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/error.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <div class="header">
+        <p class="p">An error occurred</p>
+    </div>
+
+
+    <div class="body">
+        <p class="p">This function was temporarily removed due to an error in our database. This function will be fixed as soon as possible.</p>
+    </div>
+    
+    <button id="cancel-btn">Close</button>
+    
+    <script>
+        const remote = require('electron').remote;
+       
+         document.getElementById("cancel-btn").addEventListener("click", function (e) {
+              var window = remote.getCurrentWindow();
+              window.close();
+         });   
+       
+       </script>   
+</body>
+</html>

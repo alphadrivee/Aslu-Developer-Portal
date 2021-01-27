@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/land.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ADP - Land</title>
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form>
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input id="name" type="text" placeholder="Full Name" />
+			<input id="email" type="email" placeholder="Email" />
+            <input id="password" type="password" placeholder="Password" />
+            <input id="phone" type="input" placeholder="Mobile Number" />
+			<button type="button" onclick="signup()">Sign Up</button>
+			<span id="statusString" class="statusString"></span>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="loginForm" action="#">
+			<h1>Login</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input id="username2" type="text" placeholder="Username" />
+			<input id="password2" type="password" placeholder="Password" />
+			<a href="../views/forgot.html">Forgot your password?</a>
+			<button type="button" onclick="login()">Login</button>
+			<span id="statusString2" class="statusString"></span>
+		</form>
+    </div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome To Our Portal!</h1>
+				<p>Enter your personal details and join our team!</p>
+				<button onclick="Login()"class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To get access to the alsu developer portal, please login!</p>
+				<button onclick="SignUp()" class="ghost" id="signUp">Sign Up</button>
+            </div>
+		</div>
+	</div>
+</div>
+
+ <!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script> 
+
+<script>
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDPLjhytfwwz42-hzeYy_i7qX14jPq71bo",
+    authDomain: "aslu-portal.firebaseapp.com",
+    databaseURL: "https://aslu-portal-default-rtdb.firebaseio.com",
+    projectId: "aslu-portal",
+    storageBucket: "aslu-portal.appspot.com",
+    messagingSenderId: "248162905823",
+    appId: "1:248162905823:web:e2e4e75205203cfd79836a",
+    measurementId: "G-H823DR3CD2"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+</script>
+
+<script src="../script/land.js"></script>
+<script src="../script/signup.js"></script>
+<script src="../script/login.js"></script>
+</body>
+</html>

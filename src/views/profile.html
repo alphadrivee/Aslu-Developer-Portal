@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Aslu Developer Portal</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="../views/main.html" title="Home">
+            <img src="../../imgs/Home.png" class="nav-btns home">
+        </a>
+        <hr>
+        <a href="../views/contribute-room.html" title="Contribute Room">
+            <img src="../../imgs/Contribute.png" class="nav-btns animated contribute">
+        </a>
+        <a href="../views/profile.html" title="Profile">
+            <img src="../../imgs/user.png" class="nav-btns animated profile">
+        </a>
+        <a href="../views/Settings/mod.html" title="Settings">
+            <img src="../../imgs/Settings.png" class="nav-btns animated settings">
+        </a>
+
+        <a href="../views/add-news.html">
+            <img src="../../imgs/addnews.png" class="nav-btns animated add-news">
+        </a>
+
+    </div>
+
+    <div class="home-page">
+
+        <div class="side-menu">
+            <div class="lists"><a href="#">General</a></div>
+            <div class="lists"><a href="#">Privacy</a></div>
+            <div class="lists"><a href="#">Apparence</a></div>
+        </div>
+
+        <div class="profile-card">
+            <div class="img-div">
+                <img id="pfp" src="../../imgs/user.png" onclick="showDialog()" >
+            </div>
+            <div class="field">
+               <div id="left"> <input id="fullname" type="text" placeholder="Full Name"/> </div>
+               <div id="right"> <input id="username" type="text" placeholder="Username"/> </div>
+
+               <div id="left"> <input id="password" type="password" placeholder="Password"/> </div>
+               <div id="right"> <input id="email" type="text" placeholder="Email"/> </div>
+
+               <div id="left"> <input id="phone" type="text" placeholder="Phone Number"/> </div>
+               <div id="right"> <input id="address" type="text" placeholder="Address"/> </div>
+
+               <div id="left"> <input id="atoll" type="text" placeholder="Island/Atoll"/> </div>
+               <div id="right"> <input id="dob" type="text" placeholder="Date Of Birth"/> </div>
+
+               <div id="left"> <input id="id" type="text" placeholder="ID Card No"/> </div>
+
+               <div id="right"> <button onclick="save()" id="save">Save Changes</button> </div>
+
+
+                <p id="right" class="status">Auto Filling Information...</p>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script> 
+
+<script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDPLjhytfwwz42-hzeYy_i7qX14jPq71bo",
+        authDomain: "aslu-portal.firebaseapp.com",
+        databaseURL: "https://aslu-portal-default-rtdb.firebaseio.com",
+        projectId: "aslu-portal",
+        storageBucket: "aslu-portal.appspot.com",
+        messagingSenderId: "248162905823",
+        appId: "1:248162905823:web:e2e4e75205203cfd79836a",
+        measurementId: "G-H823DR3CD2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+</script>
+    <script src="../script/profile.js"></script>
+</body>
+</html>

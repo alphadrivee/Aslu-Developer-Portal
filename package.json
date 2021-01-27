@@ -1,0 +1,56 @@
+{
+  "name": "aslu-portal",
+  "version": "1.0.0",
+  "description": "Developer Portal For Aslu News Website",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-installer": "electron-builder",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "build": {
+    "appId": "aslu-portal",
+    "productName": "Aslu Developer Portal",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/",
+      "./src/",
+      "./imgs/"
+    ],
+    "win": {
+      "asar": false,
+      "target": "nsis",
+      "icon": "build/favicon.ico",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "installerIcon": "build/favicon.ico",
+      "uninstallerIcon": "build/favicon.ico",
+      "uninstallDisplayName": "Alsu Developer Portal",
+      "license": "license.txt",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/alphadrivee/Aslu-Developer-Portal.git"
+  },
+  "author": "Layaan Shahudhee",
+  "license": "MIT",
+  "dependencies": {
+    "custom-electron-titlebar": "^3.2.5",
+    "edit-json-file": "^1.5.0",
+    "electron-updater": "^4.3.5",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
+    "webpack": "^5.18.0"
+  }
+}

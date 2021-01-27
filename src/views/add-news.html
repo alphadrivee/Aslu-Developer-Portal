@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../stylesheets/news.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Aslu Developer Portal</title>
+</head>
+<body>
+    <div id="left" class="nav">
+        <a href="../views/main.html">
+            <img src="../../imgs/Home.png" class="nav-btns home">
+        </a>
+        <hr>
+        <a href="../views/contribute-room.html">
+            <img src="../../imgs/Contribute.png" class="nav-btns animated contribute">
+        </a>
+        <a href="../views/profile.html">
+            <img src="../../imgs/user.png" class="nav-btns animated profile">
+        </a>
+        <a href="../views/Settings/mod.html">
+            <img src="../../imgs/Settings.png" class="nav-btns animated settings">
+        </a>
+
+        <a href="#">
+            <img src="../../imgs/addnews.png" class="nav-btns animated add-news">
+        </a>
+    </div>
+
+    <div class="home-page">
+
+        <div class="information">
+            <h1>ޙަބަރު ލިޔޭ</h1>
+
+            <input id="long-title" type="text" placeholder="(Full Title) ފަލަ ސުރުހީ" />
+            <input id="short-title" type="text" placeholder="(Display Titile) ކުރު ސުރުހީ" />
+            <input id="latin-title" type="text" placeholder="(Title In Latin) ލެޓިނުން ލިޔާ ސުރުހީ" />
+
+            <main>
+                <p>Separate your tags with a comma</p>
+                <div class="tags-input"></div>
+                <h1><span>Tags</span> Input</h1>
+              </main>
+
+        </div>
+        
+        
+        <div id="right" class="side-bar-g">
+            <div class="clock-container">
+                <div class="clock-col">
+                  <p class="clock-day clock-timer"></p>
+                  <p class="clock-label">Day</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-hours clock-timer"></p>
+                  <p class="clock-label">Hours</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-minutes clock-timer"></p>
+                  <p class="clock-label">Minutes</p>
+                </div>
+                <div class="clock-col">
+                  <p class="clock-seconds clock-timer"></p>
+                  <p class="clock-label">Seconds</p>
+                </div>
+              </div>
+        </div>
+    </div>
+
+<script src="../script/clock.js"></script>
+<script src="../script/tags.js"></script>
+    <!--------------------------FIRBASE LIBRARIES-------------------------------------------------->
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script> 
+
+<script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyDPLjhytfwwz42-hzeYy_i7qX14jPq71bo",
+        authDomain: "aslu-portal.firebaseapp.com",
+        databaseURL: "https://aslu-portal-default-rtdb.firebaseio.com",
+        projectId: "aslu-portal",
+        storageBucket: "aslu-portal.appspot.com",
+        messagingSenderId: "248162905823",
+        appId: "1:248162905823:web:e2e4e75205203cfd79836a",
+        measurementId: "G-H823DR3CD2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script> 
+
+
+</body>
+</html>
